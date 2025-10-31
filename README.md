@@ -35,4 +35,4 @@ Note it only works with the Raspberry Pi 3B+
 - All code in this repository is released under the [GNU GPL v3 License](https://www.gnu.org/licenses/gpl-3.0.html).
 - All documentation, 3D models, and visual materials are released under the [Creative Commons BY-SA 4.0 License](https://creativecommons.org/licenses/by-sa/4.0/).
 
-© 2025 Marc Monka
+2025 Marc Monka
