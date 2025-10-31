@@ -12,7 +12,6 @@ This project is another experimental project that combines hardware, MIDI and op
 ## Content:
 
 - /arduino/ -> firmware code
-- /3d-model/ -> STL file to 3D print
 - /datasheets/ -> Original CDJ, Teensy and Raspberry datasheets
 - /images/ -> Process and result pics
 - /raspberri-img/ -> IMG file with all set for a Pi 3B+.
