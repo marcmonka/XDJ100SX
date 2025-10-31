@@ -27,7 +27,7 @@ This project is another experimental project that combines hardware, MIDI and op
 
 Note it only works with the Raspberry Pi 3B+
 
-![Image File](https://drive.google.com/file/d/1xF3MYwbI78TJTnMUjNkVMXjbA1-jqFb2/view?usp=sharing)
+[Image File](https://drive.google.com/file/d/1xF3MYwbI78TJTnMUjNkVMXjbA1-jqFb2/view?usp=sharing).
 
 
 
