@@ -1,0 +1,159 @@
+<Template>
+    <WidgetGroup>
+        <ObjectName>HotCuePanel</ObjectName>
+            <Size>0me,0me</Size>
+             <Layout>vertical</Layout>
+        <Children>
+        <WidgetGroup>
+        <ObjectName>Waveforms_Container</ObjectName>
+        <Layout>horizontal</Layout>
+        <Children>
+          <Template src="skin:waveforms.xml"></Template>
+        </Children>
+      </WidgetGroup>
+    
+    <WidgetGroup><ObjectName>HotCues</ObjectName><Layout>horizontal</Layout><Size>100me,95f</Size><Children>
+                
+                <WidgetGroup><Size>20f,95f</Size></WidgetGroup>
+
+                <PushButton>
+                <NumberStates>1</NumberStates>
+                <ObjectName>HotCue</ObjectName>
+                <Size>95f,75f</Size>
+                <State
+                ><Number>0</Number>
+                <Text>⏪ 4</Text>
+                </State>
+                <Connection>
+                <ConfigKey>[Channel1],beatjump_4_backward</ConfigKey>
+                </Connection>
+                </PushButton>
+
+                <WidgetGroup><Size>10f,95f</Size></WidgetGroup>
+
+                 <PushButton>
+                <NumberStates>1</NumberStates>
+                <ObjectName>HotCue</ObjectName>
+                <Size>95f,75f</Size>
+                <State
+                ><Number>0</Number>
+                <Text>4 ⏩</Text>
+                </State>
+                <Connection>
+                <ConfigKey>[Channel1],beatjump_4_forward</ConfigKey>
+                </Connection>
+                </PushButton>
+
+                <WidgetGroup><Size>20f,95f</Size></WidgetGroup>
+
+                 <PushButton>
+                <NumberStates>1</NumberStates>
+                <ObjectName>HotCue</ObjectName>
+                <Size>95f,75f</Size>
+                <State
+                ><Number>0</Number>
+                <Text>⏪ 8</Text>
+                </State>
+                <Connection>
+                <ConfigKey>[Channel1],beatjump_8_backward</ConfigKey>
+                </Connection>
+                </PushButton>
+                
+                <WidgetGroup><Size>10f,95f</Size></WidgetGroup>
+
+                 <PushButton>
+                <NumberStates>1</NumberStates>
+                <ObjectName>HotCue</ObjectName>
+                <Size>95f,75f</Size>
+                <State
+                ><Number>0</Number>
+                <Text>8 ⏩</Text>
+                </State>
+                <Connection>
+                <ConfigKey>[Channel1],beatjump_8_forward</ConfigKey>
+                </Connection>
+                </PushButton>
+
+                <WidgetGroup><Size>20f,95f</Size></WidgetGroup>
+
+                 <PushButton>
+                <NumberStates>1</NumberStates>
+                <ObjectName>HotCue</ObjectName>
+                <Size>95f,75f</Size>
+                <State
+                ><Number>0</Number>
+                <Text>⏪ 16</Text>
+                </State>
+                <Connection>
+                <ConfigKey>[Channel1],beatjump_16_backward</ConfigKey>
+                </Connection>
+                </PushButton>
+
+                <WidgetGroup><Size>10f,95f</Size></WidgetGroup>
+
+                 <PushButton>
+                <NumberStates>1</NumberStates>
+                <ObjectName>HotCue</ObjectName>
+                <Size>95f,75f</Size>
+                <State
+                ><Number>0</Number>
+                <Text>16 ⏩</Text>
+                </State>
+                <Connection>
+                <ConfigKey>[Channel1],beatjump_16_forward</ConfigKey>
+                </Connection>
+                </PushButton>
+
+                <WidgetGroup><Size>20f,95f</Size></WidgetGroup>
+
+                 <PushButton>
+                <NumberStates>1</NumberStates>
+                <ObjectName>HotCue</ObjectName>
+                <Size>95f,75f</Size>
+                <State
+                ><Number>0</Number>
+                <Text>⏪ 32</Text>
+                </State>
+                <Connection>
+                <ConfigKey>[Channel1],beatjump_32_backward</ConfigKey>
+                </Connection>
+                </PushButton>
+
+                 <WidgetGroup><Size>10f,95f</Size></WidgetGroup>
+
+                 <PushButton>
+                <NumberStates>1</NumberStates>
+                <ObjectName>HotCue</ObjectName>
+                <Size>95f,75f</Size>
+                <State
+                ><Number>0</Number>
+                <Text>32 ⏩</Text>
+                </State>
+                <Connection>
+                <ConfigKey>[Channel1],beatjump_32_forward</ConfigKey>
+                </Connection>
+                </PushButton>
+
+                <WidgetGroup><Size>20f,95f</Size></WidgetGroup>
+
+      
+                
+            </Children></WidgetGroup> 
+           
+            
+
+<WidgetGroup>
+        <ObjectName>Decks</ObjectName>
+        <Layout>horizontal</Layout>
+        <Size>0me,85max</Size>
+        <Children>
+          <Template src="skin:deck.xml">
+            <SetVariable name="channel">1</SetVariable>
+          </Template>
+          
+        </Children>
+      </WidgetGroup>
+
+        </Children>
+    </WidgetGroup>
+</Template>

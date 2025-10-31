@@ -1,0 +1,32 @@
+<Template>
+  <WidgetGroup>
+    <SizePolicy>me,me</SizePolicy>
+    <Layout>vertical</Layout>
+    <Children>
+      
+        <PushButton>
+  <ObjectName>ToggleDayNight</ObjectName>
+  <Size>100f,40f</Size>
+  <Text>Day/Night</Text>
+  <Connection>
+    <ConfigKey>[Skin],daynight_toggle</ConfigKey>
+  </Connection>
+</PushButton>
+
+
+
+      <WidgetGroup>
+        <ObjectName>Decks</ObjectName>
+        <Layout>horizontal</Layout>
+        <Size>0me,65max</Size>
+        <Children>
+          <Template src="skin:deckminimal.xml">
+            <SetVariable name="channel">1</SetVariable>
+          </Template>
+          
+        </Children>
+      </WidgetGroup>
+    </Children>
+  </WidgetGroup>
+  
+</Template>

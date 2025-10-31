@@ -1,0 +1,666 @@
+/* Pioneer Colours:
+
+Play button: #6ee128
+Cue button: #eb870f
+Slip button: #d73535
+Tabs on top: #c3d541
+Headers: #32323c
+Title bg: #112f5c
+Blue: #2d85cd
+White: #e5e6ea
+
+*/
+
+
+#Mixxx {
+  background-color: #000;
+}
+
+*{
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+QMenuBar, QMenuBar::item, QMenu, QMenu::item {
+  background-color: black;
+  color: gray;
+}
+
+QMenuBar::item:pressed, QMenu::item:selected, QMenu::item:pressed {
+    background-color: rgba(255,255,255,0.2);
+}
+
+/************************************************************************/
+/*     Buttons                                                          */
+/************************************************************************/
+
+WPushButton {
+  color: #e5e6ea;
+  background-color: transparent;
+  border: 1px solid #e5e6ea;
+  border-radius: 2px;
+  outline: none;
+}
+
+WPushButton[value="1"] {
+  color: #d73535;
+  border-color: #d73535;
+  
+}
+
+
+
+/************************************************************************/
+/*     Deck                                                             */
+/************************************************************************/
+
+#Deck {
+  border: 10px solid transparent;
+  border-radius: 2px;
+}
+#DeckMinimal{
+  border:5px solid transparent;
+  border-radius:2px;
+  padding-left:5px;
+  padding-right:5px;
+  
+}
+
+#DeckBPMWrapper {
+  border: 1px solid #e5e6ea;
+  border-radius: 2px;
+  margin-bottom: 4px;
+  padding-right: 10px;
+  padding-left: 5px;
+  qproperty-layoutAlignment: 'AlignHCenter| AlignVCenter';
+}
+
+#DeckBPMWrapperminimal{
+  border: 1px solid #e5e6ea;
+  border-radius: 2px;
+  qproperty-layoutAlignment: 'AlignHCenter| AlignVCenter';
+
+}
+
+
+#DeckBPM {
+  padding-left:2px;
+  font-size: 50px;
+  font-weight:300;
+}
+#DeckBPMminimal{
+  padding-left:2px;
+  font-size:25px;
+  font-weight:300;
+}
+
+#DeckBPMTitleWrapper {
+  qproperty-layoutAlignment: 'AlignLeft | AlignVCenter';
+}
+
+#DeckBPMTitle {
+  padding-top:2px;
+  font-size: 10px;
+  font-weight: 400;
+}
+
+#TrackBPMRangeContainer {
+  margin-right: 50px;
+  padding: 5px;
+  qproperty-layoutAlignment: 'AlignHCenter | AlignTop';
+}
+#TrackBPMRangeContainerMinimal {
+  margin-right: 5px;
+  padding: 0;
+  qproperty-layoutAlignment: 'AlignRight | AlignVCenter';
+}
+
+#DeckBPMRangePercent {
+  background-color: #fff;
+  padding: 0 10px 0 10px;
+}
+#DeckBPMRangePercentMinimal {
+  background-color: #fff;
+  padding: 0 5px 0 5px;
+  margin:0 5px 0 5px;
+}
+#TempoName{
+  color:#fff;
+  margin-right:20px;
+
+}
+
+#BPMRangePlusMinus, #RateDisplay {
+    font-size: 18px;
+    font-weight: 300;
+    color:#000;
+}
+#BPMRangePlusMinusMinimal, #RateDisplayMinimal {
+    font-size: 14px;
+    font-weight: 300;
+    color:#000;
+}
+#PitchCurrent{
+  font-size:40px;
+  font-weight:200;
+}
+#BPMPercent{
+  font-size:12px;
+  font-weight:300;
+  margin-top:20px;
+}
+#PitchCurrentMinimal{
+  font-size:20px;
+  font-weight:200;
+  margin-top:5px;
+}
+
+#KeyInfoMinimal{
+  font-size:14px;
+  font-weight:300;
+  margin-top:5px;
+
+}
+
+
+
+
+#DeckHeader {
+  background-color: #112f5c;
+  padding: 2px;
+}
+
+
+
+#DeckTitle, #DeckTitleNote {
+  font-size: 20px;
+}
+
+#DeckTitleNote {
+  margin: 0 2px;
+}
+
+#MasterTempo, #BeatJumps{
+  color:#fff;
+  border: 1px solid #e5e6ea;
+  border-radius: 2px;
+  qproperty-alignment: 'AlignCenter';
+  margin: 5px 0 5px 0;
+
+}
+
+#Mode1, #Mode2, #Mode3, #Mode4, #Mode5, #Mode6{
+  font-size:10px;
+  color:#fff;
+  border-radius:2px;
+  qproperty-alignment: 'AlignCenter';
+  margin:10px 0 10px 0;
+}
+#Mode1{
+  background-color:#0551cc;
+
+}
+#Mode2{
+  background-color:#a45f26;
+
+}
+#Mode3{
+  background-color:#d73535;
+}
+#Mode4{
+  background-color:#f87021;
+}
+#Mode5{
+  background-color:#3478f2;
+}
+#Mode6{
+  background-color:green;
+}
+
+#MasterTempoMinimal{
+  color:#fff;
+  border:1px solid #e5e6ea;
+  border-radius:2px;
+  qproperty-alignment:'AlignCenter';
+  margin: 2px 0 2px 0;
+}
+
+#MasterTempo[highlight="1"], #MasterTempoMinimal[highlight="1"]{
+  color: #d73535;
+  border-color: #d73535;
+}
+
+#KeyTitle, #KeyInfo{
+  color:#fff;
+  font-weight:400;
+}
+#KeyTitle{
+  margin-top:5px;
+  font-size:12px;
+  
+}
+#KeyInfo{
+  font-size:25px;
+}
+
+
+
+#DeckChannelTitle, #DeckTrackTimeTitle, #DeckTempoTitle {
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: uppercase;
+
+}
+
+#DeckPlayingLeft {
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+
+
+#DeckTrackTime {
+
+  font-size: 50px;
+  font-weight:300;
+}
+
+#DeckTrackTime[highlight="1"] {
+  color: transparent;
+}
+
+#DeckTrackTimeMinimal{
+  font-size:30px;
+  font-weight:300;
+  margin-left:2px;
+}
+
+#DeckTrackTimeMini {
+  font-size: 20px;
+}
+
+#DeckTrackTimeMini[highlight="1"] {
+  color: transparent;
+}
+
+#DeckTrackNumberContainer {
+  margin: 0 4px;
+  qproperty-layoutAlignment: 'AlignHCenter | AlignTop';
+}
+
+#TrackNumberWrapper, #DeckChannelTitleWrapper {
+  qproperty-layoutAlignment: 'AlignHCenter | AlignVCenter';
+}
+
+#TrackNumberTitle {
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+#TrackNumber {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#DeckOverviewContainer{
+  padding: 0 10px 0 10px;
+  margin-top:0;
+}
+
+#DeckOverviewContainerMinimal{
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#BeatJumpSizeDisplay{
+  color:#fff;
+  font-size:30px;
+  font-weight:300;
+  border:none;
+}
+
+#BeatJumpName, #BeatJumpSizeDisplay, #DeckTrackTimeTitle, #DeckTrackTimeMini, #DeckTrackTime{
+  qproperty-alignment: 'AlignCenter';
+}
+#BeatJumpName{
+  margin-top:5px;
+  font-size:12px;
+}
+#BeatJumps{
+  margin-top:30%;
+  
+}
+
+#DeckTrackTime{
+  font-size:60px;
+  font-weight:300;
+}
+
+#TitleText, #DurationText{
+  font-size:20px;
+}
+#ArtistText{
+  font-size:15px;
+  font-weight:200;
+}
+
+#TrackInfo, #TrackInfoText{
+  margin-left:25%;
+}
+
+
+
+/************************************************************************/
+/*     Library                                                          */
+/************************************************************************/
+
+#LibraryWrapper QScrollBar {
+  background-color: #262626;
+}
+
+#LibraryWrapper QScrollBar::handle:horizontal {
+  border: 0;
+}
+
+#LibraryWrapper QScrollBar:horizontal {
+  height: 0;
+  width: 0;
+}
+
+#LibraryWrapper QScrollBar:vertical {
+  border: 0;
+  width: 4px;
+}
+
+#LibraryWrapper QScrollBar::add-page,
+#LibraryWrapper QScrollBar::sub-page {
+  background-color: black;
+}
+
+#LibraryWrapper QScrollBar::add-line,
+#LibraryWrapper QScrollBar::sub-line {
+  height: 0;
+  width: 0;
+}
+
+#LibraryWrapper WTrackTableViewHeader::section {
+  background-color: #262626;
+  color: #e5e6ea;
+  font-weight: 400;
+  margin: 2px;
+  text-transform: uppercase;
+  font-size:14px;
+}
+
+#LibraryWrapper QTableView,
+#LibraryWrapper WLibraryTextBrowser {
+  background-color: #181818;
+  alternate-background-color: #262626;
+  selection-background-color: #3478f2;
+  color: #fff;
+  selection-color: #fff;
+  font-size:18px;
+  font-weight:300;
+  row-height:50px;
+}
+
+#LibraryWrapper WLibrarySidebar {
+  background-color: #181818;
+  selection-background-color: #3478f2;
+  border-right: 4px solid gray;
+  color: #fff;
+  font-weight: 400;
+  selection-color: #fff;
+  text-transform: uppercase;
+  font-size:18px;
+}
+
+#LibraryWrapper QPushButton,
+#LibraryWrapper QSpinBox,
+#LibraryWrapper QComboBox,
+#LibraryWrapper QComboBox QAbstractScrollArea {
+  background-color: #181818;
+  color: #fff;
+}
+
+WLabel {
+  color: #fff;
+}
+
+/* Library Search */
+#SearchBox {
+  background-color: #181818;
+  border-radius: 0;
+  font-size: 15px;
+  font-weight: 300;
+  padding: 4px;
+  text-transform: uppercase;
+}
+
+/* Sidebar (track/playlist) */
+#SidebarContainer {
+  background-color: #181818;
+}
+#SidebarButton{
+  background-color: #262626;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0;
+  border:none;
+  border-bottom:2px solid #585858;
+}
+#SidebarButton[value="1"]{
+  background-color: #547ecb;
+  border:none;
+}
+
+
+
+/************************************************************************/
+/*     Waveforms                                                        */
+/************************************************************************/
+
+#WaveformInfo {
+  margin-right: 10px;
+}
+
+
+#WaveformInfo_Header {
+  background-color: #000;
+  border-top-right-radius: 10px 25px;
+  padding-right: 2px;
+}
+
+#WaveformInfo_Header[highlight="1"] {
+  border: 2px solid #e5e6ea;
+}
+
+#WaveformInfo_Title,
+#WaveformInfo_Key,
+#WaveformInfo_Bars {
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+#WaveformInfo_Data_Container,
+#WaveformInfo_Key_Container,
+#WaveformInfo_Bars_Container,
+#WaveformInfo_Loopsize_Container {
+  qproperty-layoutAlignment: 'AlignLeft | AlignTop';
+}
+
+#WaveformInfo_Key_Icon {
+  background-color: #000;
+  border-radius: 2px;
+  font-size: 14px;
+  margin: 4px;
+  padding: -6px -6px -3px -2px;
+}
+
+#WaveformInfo_Loop_Icon {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 2px;
+}
+
+#WaveformInfo_BeatloopSizeSpinBox {
+  margin: 3px;
+  padding: -4px -4px 0px -8px;
+}
+
+WBeatSpinBox {
+  color: #ffffff;
+  font-size: px;
+  font-weight: bold;
+  background-color: #000000;
+}
+
+WBeatSpinBox::down-arrow,
+WBeatSpinBox::up-arrow,
+WBeatSpinBox::down-button,
+WBeatSpinBox::up-button {
+  width: 0px;
+  height: 0px;
+  color: #000000;
+  background-color: #000000;
+}
+
+#WaveformInfo_KeylockButton {
+  image: url(skin:icons/keylock.svg) no-repeat center center;
+}
+
+#WaveformInfo_QuantizeButton {
+  image: url(skin:icons/quantize.svg) no-repeat center center;
+}
+
+/************************************************************************/
+/*     Tabs                                                             */
+/************************************************************************/
+
+#FonsBarra{
+  background-color:#181818;
+}
+
+#TabControls{
+  background-color:#181818;
+  
+}
+
+
+
+
+#TrackMetadata{
+  margin-left:20px;
+}
+
+#TabControls WPushButton{
+  background-color: #262626;
+  font-weight: bold;
+  font-size:25px;
+}
+
+#RightButtons WPushButton{
+  padding:50px;
+  color:white;
+  font-size:15px;
+  
+}
+
+
+#TabControls WPushButton[value="0"] {
+  border:none;
+  border-bottom: 2px solid #585858;
+  color: #fff;
+}
+
+#TabControls WPushButton[value="1"] {
+  border:none;
+  border-bottom: 2px solid #fff;
+  color: #fff;
+  background-color: #3478f2;
+}
+
+
+#HotCues WPushButton[value="0"], #KeyShift WPushButton[value="0"], #KeyShiftInfo, #Beatloop WPushButton[value="0"], #Stems WPushButton[value="0"]{
+background-image: url(skin:icons/button.png);
+background-repeat: repeat-xy;
+font-weight:400;
+}
+
+
+
+
+#Beatloop WPushButton{
+  border: 2px solid #f87021;
+  font:25px;
+  font-weight:400;
+}
+
+#Beatloop WPushButton[value="1"],  #Stems WPushButton[value="1"]{
+  background-image: url(skin:icons/button-loop.png);
+  background-repeat: repeat-xy;
+  color:#fff;
+
+}
+
+
+#HotCues WPushButton[value="1"], #KeyShift WPushButton[value="1"], #KeyShiftInfo WPushButton[value="1"]{
+  background-color: #efefefff;
+  border:none;
+  font-weight:400;
+}
+#HotCues WPushButton, #KeyShiftInfo, #Stems WPushButton{
+  border: 2px solid #c0ccba;
+  font-weight:800;
+}
+
+#HotCues WPushButton, #KeyShift WPushButton{
+  font-size:25px;
+  font-weight:bold;
+  color: #fff;
+}
+
+#Stems WPushButton{
+  font-size:20px;
+  font-weight:400;
+  color:#fff;
+}
+
+
+#SeparadorKey{
+  background-image: url(skin:icons/keyshiftseparator.png);
+  background-repeat: repeat-xy;
+}
+
+
+#KeyShiftInfo{
+background-repeat: repeat-xy;
+font-weight:400;;
+font-size:25px;
+
+}
+
+#KeyShiftInfo2, #PitchAdjustDisplay{
+  background-color:#fff;
+  color:#000;
+  font-size:25px;
+  font-weight:400;
+
+}
+
+#ResetKey WPushButton{
+  font-size:18px;
+  font-weight:400;
+  background-color:#e5e6ea;
+  color:#000;
+  border:none;
+  border-radius:0;
+}
+#ResetKey WPushButton[value="1"]{
+  color:#000;
+  border:none;
+  background-color:#585858;
+}

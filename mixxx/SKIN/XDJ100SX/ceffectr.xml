@@ -1,0 +1,15 @@
+<Template>
+  <WidgetGroup>
+    <Layout>vertical</Layout>
+     <Children>
+                  <EffectChainPresetSelector>
+                    <ObjectName>QuickEffectSelectorLeft</ObjectName>
+                    <EffectUnitGroup>[QuickEffectRack1_[Channel2]]</EffectUnitGroup>
+                  </EffectChainPresetSelector>
+                <Connection>
+                  <ConfigKey persist="true">[Skin],show_eq_knobs</ConfigKey>
+                  <BindProperty>visible</BindProperty>
+                </Connection>
+    </Children>
+  </WidgetGroup>
+</Template>

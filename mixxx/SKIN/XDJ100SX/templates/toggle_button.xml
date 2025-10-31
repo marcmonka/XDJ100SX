@@ -1,0 +1,38 @@
+<!DOCTYPE template>
+<!--
+  Description:
+    A button that has a left-click display control and a right-click control.
+  Variables:
+    ObjectName: The object name.
+    Size: the button size.
+    StateXText:
+    StateXPressed:
+    StateXUnpressed:
+
+Originally taken from the Deere theme included with Mixxx, modified slightly.
+-->
+<Template>
+  <PushButton>
+    <TooltipId><Variable name="TooltipId"/></TooltipId>
+    <ObjectName><Variable name="ObjectName"/></ObjectName>
+    <Size><Variable name="Size"/></Size>
+    <NumberStates>2</NumberStates>
+    <State>
+      <Number>0</Number>
+      <Text><Variable name="State0Text"/></Text>
+      <Pressed scalemode="STRETCH_ASPECT"><Variable name="State0Pressed"/></Pressed>
+      <Unpressed scalemode="STRETCH_ASPECT"><Variable name="State0Unpressed"/></Unpressed>
+    </State>
+    <State>
+      <Number>1</Number>
+      <Text><Variable name="State1Text"/></Text>
+      <Pressed scalemode="STRETCH_ASPECT"><Variable name="State1Pressed"/></Pressed>
+      <Unpressed scalemode="STRETCH_ASPECT"><Variable name="State1Unpressed"/></Unpressed>
+    </State>
+    <Connection>
+      <ConfigKey><Variable name="LeftConnectionControl"/></ConfigKey>
+      <EmitOnPressAndRelease>true</EmitOnPressAndRelease>
+      <ButtonState>LeftButton</ButtonState>
+    </Connection>
+  </PushButton>
+</Template>

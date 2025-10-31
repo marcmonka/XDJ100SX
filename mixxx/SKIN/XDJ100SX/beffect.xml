@@ -1,0 +1,41 @@
+<Template>
+  <WidgetGroup>
+    <Layout>vertical</Layout>
+     <Children>
+                  <EffectChainPresetSelector>
+                    <ObjectName>EffectUnit1_kEffectSelectorLeft</ObjectName>
+                    <EffectUnitGroup>[EffectRack1_EffectUnit1]</EffectUnitGroup>
+                  </EffectChainPresetSelector>
+                <Connection>
+                  <ConfigKey persist="true">[Skin],show_eq_knobs</ConfigKey>
+                  <BindProperty>visible</BindProperty>
+                </Connection>
+<PushButton>
+        <ObjectName>EffectToggle</ObjectName>
+        <Size>0me,25max</Size>
+        <NumberStates>2</NumberStates>
+        <State>
+          <Number>0</Number>
+          <Text>Off</Text>
+        </State>
+        <State>
+          <Number>1</Number>
+          <Text>Active</Text>
+        </State>
+        <Connection>
+          <ConfigKey>[EffectRack<Variable name="rack"/>_EffectUnit<Variable name="unit"/>_Effect<Variable name="effect"/>],enabled</ConfigKey>
+          <ConnectValueToWidget>true</ConnectValueToWidget>
+        </Connection>
+        <Connection>
+          <ConfigKey>EffectRack<Variable name="rack"/>_EffectUnit<Variable name="unit"/>],group_[Master]_enable</ConfigKey>
+          <ConnectValueToWidget>false</ConnectValueToWidget>
+        </Connection>
+        <Connection>
+          <ConfigKey>[EffectRack<Variable name="rack"/>_EffectUnit<Variable name="unit"/>_Effect<Variable name="effect"/>],meta</ConfigKey>
+          <ConnectValueToWidget>false</ConnectValueToWidget>
+        </Connection>
+      </PushButton>
+
+    </Children>
+  </WidgetGroup>
+</Template>

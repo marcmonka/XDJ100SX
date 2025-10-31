@@ -1,0 +1,170 @@
+<skin>
+	<manifest>
+		<title>XDJ100SX</title>
+		<author>Marc Monka</author>
+		<version>1.0</version>
+		<description>Skin for 1 standalone deck with different performance submenus. A lookalike Pioneer DJ / Alphatheta deck player style. </description>
+		<language>*</language>
+		<license>GPL</license>
+		<attributes>
+			<attribute config_key="[Master],num_decks">1</attribute>
+			<attribute config_key="[Master],num_samplers">0</attribute>
+			<attribute persist="true" config_key="[Master],maximize_library">0</attribute>
+			<attribute persist="true" config_key="[Master],skin_settings">0</attribute>
+			<attribute persist="true" config_key="[Microphone],show_microphone">0</attribute>
+			<attribute persist="true" config_key="[VinylControl],show_vinylcontrol">0</attribute>
+			<attribute persist="true" config_key="[PreviewDeck],show_previewdeck">0</attribute>
+			<attribute persist="true" config_key="[Library],show_coverart">0</attribute>
+		</attributes>
+	</manifest>
+
+	<ObjectName>Mixxx</ObjectName>
+	<Style src="skin:style.qss"/>
+	<MinimumSize>480,420</MinimumSize>
+	<SizePolicy>me,me</SizePolicy>
+	<Layout>vertical</Layout>
+
+	<LaunchImageStyle>
+	  LaunchImage {
+		background-color:#000;
+		}
+	  QLabel {
+	    image: url(skin:/images/xdj100sx_logo.png);
+		border:none;
+		min-width:450px;
+		max-width:450px;
+		min-height:150px;
+		max-height:150px;
+		margin:0px 25px -30px 75px;
+
+	  }
+		QProgressBar {
+	    background-color: #262626;
+		border:none;
+		padding:0;
+		min-width:600px;
+		max-width:600px;
+		max-height: 4px;
+		max-height: 4px;
+		
+	  }
+
+	  QProgressBar::chunk {
+	    background-color: #ffffff;
+	  }
+	</LaunchImageStyle>
+
+	<Children>
+		<SingletonDefinition>
+			<ObjectName>Topbar_Singleton</ObjectName>
+			<Children>
+				<Template src="skin:topbar.xml"/>
+			</Children>
+		</SingletonDefinition>
+		<SingletonDefinition>
+			<ObjectName>Overview_Singleton</ObjectName>
+			<Children>
+				<Template src="skin:overview.xml"/>
+			</Children>
+		</SingletonDefinition>
+		<SingletonDefinition>
+			<ObjectName>Library_Singleton</ObjectName>
+			<Children>
+				<Template src="skin:library.xml"/>
+			</Children>
+		</SingletonDefinition>
+		<SingletonDefinition>
+
+        <ObjectName>Hotcues_Singleton</ObjectName>
+        <Children>
+            <Template src="skin:hotcues.xml"/>
+        </Children>
+    	</SingletonDefinition>
+
+		<SingletonDefinition>
+
+        <ObjectName>Beatloop_Singleton</ObjectName>
+        <Children>
+            <Template src="skin:beatloop.xml"/>
+        </Children>
+    	</SingletonDefinition>
+
+		<SingletonDefinition>
+
+        <ObjectName>Keyshift_Singleton</ObjectName>
+        <Children>
+            <Template src="skin:keyshift.xml"/>
+        </Children>
+    	</SingletonDefinition>
+
+		<SingletonDefinition>
+        <ObjectName>Beatjump_Singleton</ObjectName>
+        <Children>
+            <Template src="skin:beatjump.xml"/>
+        </Children>
+    	</SingletonDefinition>
+
+		<SingletonDefinition>
+        <ObjectName>Stems_Singleton</ObjectName>
+        <Children>
+            <Template src="skin:stems.xml"/>
+        </Children>
+    	</SingletonDefinition>
+
+		
+
+		
+		
+
+		<WidgetGroup>
+			<ObjectName>SkinContainer</ObjectName>
+			<Layout>vertical</Layout>
+			<SizePolicy>me,me</SizePolicy>
+			<Children>
+				<WidgetGroup>
+					<Layout>vertical</Layout>
+					<SizePolicy>me,me</SizePolicy>
+					<Children>
+						<SingletonContainer>
+							<ObjectName>Topbar_Singleton</ObjectName>
+							
+						</SingletonContainer>
+						<WidgetStack currentpage="[Tab],current">
+							<Children>
+								<SingletonContainer trigger="[Tab],overview">
+									<ObjectName>Overview_Singleton</ObjectName>
+								</SingletonContainer>
+								<SingletonContainer trigger="[Tab],library" on_hide_select="0">
+									<ObjectName>Library_Singleton</ObjectName>
+								</SingletonContainer>
+
+								<SingletonContainer trigger="[Tab],hotcues" on_hide_select="0">
+        						<ObjectName>Hotcues_Singleton</ObjectName>
+        						</SingletonContainer>
+
+								<SingletonContainer trigger="[Tab],beatloop" on_hide_select="0">
+        						<ObjectName>Beatloop_Singleton</ObjectName>
+        						</SingletonContainer>
+
+								<SingletonContainer trigger="[Tab],keyshift" on_hide_select="0">
+        						<ObjectName>Keyshift_Singleton</ObjectName>
+        						</SingletonContainer>
+
+								<SingletonContainer trigger="[Tab],beatjump" on_hide_select="0">
+        						<ObjectName>Beatjump_Singleton</ObjectName>
+        						</SingletonContainer>
+
+								<SingletonContainer trigger="[Tab],stems" on_hide_select="0">
+        						<ObjectName>Stems_Singleton</ObjectName>
+        						</SingletonContainer>
+
+								
+								
+							</Children>
+						</WidgetStack>
+					</Children>
+				</WidgetGroup>
+			</Children>
+		</WidgetGroup>
+	</Children>
+</skin>

@@ -1,0 +1,18 @@
+<Template>
+  <PushButton>
+    <ObjectName>TabButton<Variable name="tab_name"/></ObjectName>
+    <Size>12me,12me</Size>
+    <NumberStates>2</NumberStates>
+    <State>
+      <Number>0</Number>
+      <Text><Variable name="tab_name"/></Text>
+    </State>
+    <State>
+      <Number>1</Number>
+      <Text><Variable name="tab_name"/></Text>
+    </State>
+    <Connection>
+      <ConfigKey>[Tab],<Variable name="config_key"/></ConfigKey>
+    </Connection>
+  </PushButton>
+</Template>
