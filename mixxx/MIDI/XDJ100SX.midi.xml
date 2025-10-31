@@ -1,0 +1,287 @@
+<?xml version='1.0' encoding='utf-8'?>
+<MixxxControllerPreset mixxxVersion="" schemaVersion="1">
+    <info>
+        <name>XDJ100SX</name>
+    </info>
+    <controller id="">
+        <scriptfiles>
+            <file filename="XDJ100SX.js" functionprefix="XDJ100SX" />
+        </scriptfiles>
+        <controls>
+            
+           <control>
+                <group>[Channel1]</group>
+                <key>XDJ100SX.pitch</key>
+                <description>PITCH</description>
+                <status>0xB2</status>
+                <midino>0x07</midino>
+                <options>
+                <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>play</key>
+                <description>PLAY</description>
+                <status>0x90</status>
+                <midino>0x3C</midino>
+                <options>
+                    <normal/>
+                </options>
+            </control>
+             <control>
+                <group>[Channel1]</group>
+                <key>XDJ100SX.cue</key>
+                <description>CUE</description>
+                <status>0x80</status>
+                <midino>0x3D</midino>
+                <options>
+                <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>XDJ100SX.cue</key>
+                <description>CUE</description>
+                <status>0x90</status>
+                <midino>0x3D</midino>
+                <options>
+                <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>XDJ100SX.key</key>
+                <description>MASTER TEMPO - TEMPO RANGE</description>
+                <status>0x90</status>
+                <midino>0x3E</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>loop_halve</key>
+                <description>LOOP HALF</description>
+                <status>0x90</status>
+                <midino>0x40</midino>
+                <options>
+                    <normal/>
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>loop_double</key>
+                <description>LOOP DOUBLE</description>
+                <status>0x90</status>
+                <midino>0x41</midino>
+                <options>
+                    <normal/>
+                </options>
+            </control>
+            <!--SEARCH LEFT-->
+            <control>
+                <group>[Channel1]</group>
+                <key>XDJ100SX.searchButton</key>
+                <description>SEARCH BACKWARD</description>
+                <status>0x90</status>
+                <midino>0x42</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>XDJ100SX.searchButton</key>
+                <description>SEARCH BACKWARD</description>
+                <status>0x80</status>
+                <midino>0x42</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+           
+            <!--SEARCH RIGHT-->
+            <control>
+                <group>[Channel1]</group>
+                <key>XDJ100SX.searchButton</key>
+                <description>SEARCH FORWARD</description>
+                <status>0x90</status>
+                <midino>0x43</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>XDJ100SX.searchButton</key>
+                <description>SEARCH FORWARD</description>
+                <status>0x80</status>
+                <midino>0x43</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            
+            <control>
+                <key>XDJ100SX.browseDown</key>
+                <description>BROWSE DOWN</description>
+                <status>0x92</status>
+                <midino>0x46</midino>
+                <options>
+                <script-binding/></options>
+            </control>
+            
+            <control>
+                <group>[Library]</group>
+                <key>XDJ100SX.browseUp</key>
+                <description>BROWSE UP</description>
+                <status>0x92</status>
+                <midino>0x47</midino>
+                <options>
+                <script-binding/></options>
+            </control>
+            
+            <control>
+                <group>[Channel1]</group>
+                <key>XDJ100SX.loadTrack</key>
+                <description>LOAD</description>
+                <status>0x90</status>
+                <midino>0x49</midino>
+                <options>
+                <script-binding/></options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>XDJ100SX.backButton</key>
+                <description>BACK</description>
+                <status>0x90</status>
+                <midino>0x3F</midino>
+                <options>
+                <script-binding/></options>
+            </control>
+            <!-- Hot Cues i shift - he d'enviar el Note On i el Note off del shift-->
+            <control>
+                <group>[Channel1]</group>
+                <key>XDJ100SX.button1</key> <status>0x90</status> <midino>0x44</midino> <options>
+                <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>XDJ100SX.button1</key> <status>0x80</status> <midino>0x44</midino> <options>
+                <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>XDJ100SX.button2</key>
+                <status>0x90</status>
+                <midino>0x45</midino><options>
+                <script-binding/></options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>XDJ100SX.button2</key>
+                <status>0x80</status>
+                <midino>0x45</midino><options>
+                <script-binding/></options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>XDJ100SX.button3</key>
+                <status>0x90</status>
+                <midino>0x46</midino><options>
+                <script-binding/></options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>XDJ100SX.button3</key>
+                <status>0x80</status>
+                <midino>0x46</midino><options>
+                <script-binding/></options>
+            </control>
+            
+            <control>
+                <group>[Channel1]</group>
+                <key>XDJ100SX.shift</key>
+                <status>0x90</status>
+                <midino>0x47</midino><options>
+                <script-binding/></options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>XDJ100SX.shift</key>
+                <status>0x80</status> <midino>0x47</midino> <options> <!--Note off-->
+                    <script-binding/>
+                </options>
+            </control>
+            <!--Jog-->
+            <control>
+                <group>[Channel1]</group>
+                <key>XDJ100SX.nudgeWheelTurn</key> <status>0xB1</status> <midino>0x14</midino> <options>
+                <script-binding/>
+                </options>
+            </control>
+            <!-- BUTTON MODES -->
+            <control>
+                <group>[Channel1]</group>
+                <key>XDJ100SX.buttonMode</key> <status>0x90</status> <midino>0x48</midino> <options>
+                <script-binding/>
+                </options>
+            </control>
+        
+    
+        </controls>
+        <outputs>
+            <output>
+                <group>[Channel1]</group>
+                <key>beat_active</key>
+                <description>LED INTERN</description>
+                <status>0x90</status>
+                <midino>0x3F</midino>
+                <maximum>0</maximum>
+            </output>
+            <output>
+                <group>[Channel1]</group>
+                <key>cue_indicator</key>
+                <description>CUE LED</description>
+                <status>0x90</status>
+                <midino>0x3E</midino>
+                <on>0x00</on>
+                <off>0x7F</off>
+                <maximum>0</maximum>
+            </output>
+            <output>
+                <group>[Channel1]</group>
+                <key>end_of_track</key>
+                <description>LED CD END OF TRACK</description>
+                <status>0x90</status>
+                <midino>0x40</midino>
+                <on>0x00</on>
+                <off>0x7F</off>
+                <maximum>0</maximum>
+            </output>
+            <output>
+                <group>[Channel1]</group>
+                <key>play_indicator</key>
+                <description>PLAY LED</description>
+                <status>0x90</status>
+                <midino>0x3D</midino>
+                <on>0x00</on>
+                <off>0x7F</off>
+                <maximum>0</maximum>
+            </output>
+            <output>
+                <group>[Channel1]</group>
+                <key>play_latched</key>
+                <description>SIESTAPLAY</description>
+                <status>0x90</status>
+                <midino>0x41</midino>
+                <on>0x00</on>
+                <off>0x7F</off>
+                <maximum>0</maximum>
+            </output>
+        </outputs>
+    </controller>
+</MixxxControllerPreset>
