@@ -324,8 +324,8 @@ XDJ100SX.cue = function (channel, control, value, status, group){
 }
 
 
-
-//Pitch Slider
+/*
+//Pitch Slider old
 
 XDJ100SX.pitchLast = 0;
 
@@ -350,6 +350,34 @@ XDJ100SX.pitch = function (channel, control, value, status, group) {
         engine.setValue(group, "rate", normalized);
     }
 };
+*/
+
+
+
+// Pitch slider new
+
+
+XDJ100SX.pitchMSB = 0;
+XDJ100SX.pitchLSB = 0;
+
+XDJ100SX.pitch = function (channel, control, value, status, group) {
+
+    if (control === 0) {        // MSB
+        XDJ100SX.pitchMSB = value;
+    } else if (control === 32) { // LSB
+        XDJ100SX.pitchLSB = value;
+    }
+
+    // Combinar MSB + LSB
+    var full = (XDJ100SX.pitchMSB << 7) | XDJ100SX.pitchLSB; // 0–16383
+
+    // Convertir a rang de Mixxx (-1.0 .. +1.0)
+    var normalized = - (full - 8192) / 8192;
+
+    engine.setValue(group, "rate", normalized);
+};
+
+
 
 
 //Browse Encoder (scroll + canviar vista)

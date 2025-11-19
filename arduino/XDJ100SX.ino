@@ -41,14 +41,24 @@ elapsedMillis debounceTime_browse;  // Temps per filtrar rebots browse¡
 Encoder browse(browseA_pin, browseB_pin);
 long lastPosition_browse = 0;       // Última posició llegida
 
-//Pitch slider old
+elapsedMillis msec = 0;
+
+
+/* Pitch slider old
 const int pitch_pin = A0;
 const int channel_pitch = 3;
 const int controllerA0 = 7;
 int previousA0 = -1;
-elapsedMillis msec = 0;
 ResponsiveAnalogRead analog(pitch_pin, true);
+*/
 
+
+//Pitch new
+
+const int pitchPin = A0;
+ResponsiveAnalogRead analog(pitchPin, true);
+int lastMSB = -1;
+int lastLSB = -1;
 
 
 
@@ -375,7 +385,7 @@ long newPosition_browse = browse.read();
   }
 }
 
-//Pitch 
+/* Pitch old
 if (msec >= 100){
   msec = 0;
   int n0 = analogRead(A0) / 8;
@@ -385,6 +395,28 @@ if (msec >= 100){
     previousA0 = n0;
    }
 }
+*/
+
+//Pitch 14 bits
+
+analog.update();
+  int raw = analog.getValue();   // valor ja suavitzat
+
+  int value14 = map(raw, 0, 1023, 0, 16383);
+
+  byte msb = (value14 >> 7) & 0x7F;
+  byte lsb = value14 & 0x7F;
+
+  if (msb != lastMSB) {
+    usbMIDI.sendControlChange(0, msb, 1);
+    lastMSB = msb;
+  }
+
+  if (lsb != lastLSB) {
+    usbMIDI.sendControlChange(32, lsb, 1);
+    lastLSB = lsb;
+  }
+
 
 
 

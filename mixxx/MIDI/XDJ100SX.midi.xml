@@ -9,16 +9,29 @@
         </scriptfiles>
         <controls>
             
-           <control>
+                <control>
+                <description>PITCH MSB</description>
                 <group>[Channel1]</group>
                 <key>XDJ100SX.pitch</key>
-                <description>PITCH</description>
-                <status>0xB2</status>
-                <midino>0x07</midino>
+                <status>0xB0</status>
+                <midino>0x00</midino>
                 <options>
-                <script-binding/>
+                    <script-binding/>
                 </options>
             </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>XDJ100SX.pitch</key>
+                <description>PITCH LSB</description>
+                <status>0xB0</status>
+                <midino>0x20</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+
+
+
             <control>
                 <group>[Channel1]</group>
                 <key>play</key>
