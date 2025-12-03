@@ -27,8 +27,6 @@ const int jogControlNumber = 20;
 Encoder jog(jogA_pin, jogB_pin);
 long lastPosition_jog = 0;
 
-
-
 //encoder browser
 const int browseA_pin = 22;
 const int browseB_pin = 21;
@@ -60,7 +58,11 @@ ResponsiveAnalogRead analog(pitchPin, true);
 int lastMSB = -1;
 int lastLSB = -1;
 
-
+// Pitch Fader Calibration 
+const int pitchRawMin    = 0;     // measured min Value on Pitch Fader
+const int pitchRawMax    = 1016;  // measured Max Value
+const int pitchRawCenter = 455;   // change to what the middle of what is shown as value when you hit the middle from top and then bottom
+const int pitchDeadband   = 6;      // range aroung middle (how much between values explained in the line above)
 
 // MIDI OUT - Leds
 
@@ -101,9 +103,6 @@ Bounce hold_boto = Bounce (hold_pin, 50);
 Bounce time_boto = Bounce (time_pin, 50);
 Bounce mastertempo_boto = Bounce (mastertempo_pin, 50);
 Bounce load_boto = Bounce (load_pin, 50);
-
-
-
 
 // --- FUNCIONS QUE S'EXECUtEN QUAN ES REP UN MISSATGE MIDI ---
 
@@ -230,7 +229,7 @@ pinMode(ledCd, OUTPUT);
 
 
 
-
+Serial.println("setup complete");
 }
 
 
@@ -373,7 +372,6 @@ long newPosition_browse = browse.read();
       // Direcció: DRETA (baixar a la llista)
       usbMIDI.sendNoteOn(NOTE_SCROLL_DOWN, 127, midiChannelb);
       usbMIDI.sendNoteOff(NOTE_SCROLL_DOWN, 0, midiChannelb);
-
     } else {
       // Direcció: ESQUERRA (pujar a la llista)
       usbMIDI.sendNoteOn(NOTE_SCROLL_UP, 127, midiChannelb);
@@ -397,28 +395,74 @@ if (msec >= 100){
 }
 */
 
-//Pitch 14 bits
 
+ // Pitch 14 bits with calibration + deadzone
 analog.update();
-  int raw = analog.getValue();   // valor ja suavitzat
+int raw = analog.getValue();
 
-  int value14 = map(raw, 0, 1023, 0, 16383);
+// clamp to calibrated range
+if (raw < pitchRawMin) raw = pitchRawMin;
+if (raw > pitchRawMax) raw = pitchRawMax;
 
-  byte msb = (value14 >> 7) & 0x7F;
-  byte lsb = value14 & 0x7F;
+long value14;
 
-  if (msb != lastMSB) {
-    usbMIDI.sendControlChange(0, msb, 1);
-    lastMSB = msb;
-  }
+if (abs(raw - pitchRawCenter) <= pitchDeadband) {
+  // inside center zone: snap to perfect center
+  value14 = 8192;
+}
+else if (raw < pitchRawCenter) {
+  // lower half
+  value14 = map(raw,
+                pitchRawMin,
+                pitchRawCenter - pitchDeadband,
+                0,
+                8191);
+}
+else { // raw > pitchRawCenter + pitchDeadband
+  // upper half
+  value14 = map(raw,
+                pitchRawCenter + pitchDeadband,
+                pitchRawMax,
+                8193,
+                16383);
+}
 
-  if (lsb != lastLSB) {
-    usbMIDI.sendControlChange(32, lsb, 1);
-    lastLSB = lsb;
-  }
+byte msb = (value14 >> 7) & 0x7F;
+byte lsb = value14 & 0x7F;
 
+//comment for pitch calibration below
+//bool pitchChanged = false;
 
+if (msb != lastMSB) {
+  usbMIDI.sendControlChange(0, msb, 1);
+  lastMSB = msb;
+  //pitchChanged = true;
+}
+if (lsb != lastLSB) {
+  usbMIDI.sendControlChange(32, lsb, 1);
+  lastLSB = lsb;
+  //pitchChanged = true;
+}
+// for debugging/calibration of pitch only
+// if (pitchChanged) {
+//   Serial.print("PITCH: raw=");
+//   Serial.print(raw);
+//   Serial.print(" value14=");
+//   Serial.print(value14);
 
+//   if (abs(raw - pitchRawCenter) <= pitchDeadband) {
+//     Serial.print("  [CENTER]");
+//   } else if (raw < pitchRawCenter) {
+//     Serial.print("  [LOW]");
+//   } else {
+//     Serial.print("  [HIGH]");
+//   }
+
+//   Serial.print(" msb=");
+//   Serial.print(msb);
+//   Serial.print(" lsb=");
+//   Serial.println(lsb);
+// }
 
 //Parpadeig LED CD si s'acaba la cançó (MIXX envia 127)
 if (parpadeig){
