@@ -4,7 +4,7 @@ An Open Source Standalone DJ Deck
 This project is another experimental project that combines hardware, MIDI and open source software to convert an old Pioneer CDJ200 to a standalone player using all modern features.
 
 
-![XDJ100SX](images/XDJ100SX-1.jpg)
+![XDJ100SX](images/)
 
 
 ## Main Requirements:
@@ -13,17 +13,17 @@ This project is another experimental project that combines hardware, MIDI and op
 - Arduino/Teensy with MIDI libraries
 
 
-## Content:
+## Content: #in progress 01.2026
 
-- /arduino/ -> firmware code #in progress 01.2026
-- /datasheets/ -> Original CDJ, Teensy and Raspberry datasheets #in progress 01.2026
-- /images/ -> Process and result pics #in progress 01.2026
-- /mixxx/ -> Custom skin and MIDI mapping for this project #in progress 01.2026
-- /print-assets/ -> STL file to 3D print + adhesive custom skin to print #in progress 01.2026
-- /docs/ -> Documentation of this project #in progress 01.2026
+- /arduino/ -> firmware code
+- /datasheets/ -> Original CDJ, Teensy and Raspberry datasheets
+- /images/ -> Process and result pics
+- /mixxx/ -> Custom skin and MIDI mapping for this project
+- /print-assets/ -> STL file to 3D print + adhesive custom skin to print
+- /docs/ -> Documentation of this project
 
 
-## Raspberri Pi 3B+ Image file #in progress 01.2026
+## Raspberri Pi 3B+ Image file: #in progress 01.2026
 
 Note it only works with the Raspberry Pi 3B+
 
