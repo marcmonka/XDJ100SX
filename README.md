@@ -12,9 +12,8 @@ MIDI and open source software to convert an old Pioneer CDJ200 to a standalone p
 
 ## Main Requirements:
 
-- Raspberri Pi 3b+
-- Arduino/Teensy with MIDI libraries
-
+- Raspberry Pi 3b+
+- Teensy++2.0 with MIDI libraries
 
 ## Content: #in progress 01.2026
 
@@ -25,17 +24,15 @@ MIDI and open source software to convert an old Pioneer CDJ200 to a standalone p
 - /print-assets/ -> STL file to 3D print + adhesive custom skin to print
 - /docs/ -> Documentation of this project
 
-
 ## Raspberri Pi 3B+ Image file: #in progress 01.2026
 
 Note it only works with the Raspberry Pi 3B+
 
 [Image File](https://drive.google.com/).
 
-
-
 ### 📜 License
 - All code in this repository is released under the [GNU GPL v3 License](https://www.gnu.org/licenses/gpl-3.0.html).
 - All documentation, 3D models, and visual materials are released under the [Creative Commons BY-SA 4.0 License](https://creativecommons.org/licenses/by-sa/4.0/).
 
 2025 Marc Monka
+2026 Markus Golec
