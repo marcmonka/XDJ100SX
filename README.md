@@ -24,7 +24,7 @@ MIDI and open source software to convert an old Pioneer CDJ200 to a standalone p
 - /print-assets/ -> STL file to 3D print + adhesive custom skin to print
 - /docs/ -> Documentation of this project
 
-## Raspberri Pi 3B+ Image file: #in progress 01.2026
+## Raspberry Pi 3B+ Image file: #in progress 01.2026
 
 Note it only works with the Raspberry Pi 3B+
 
