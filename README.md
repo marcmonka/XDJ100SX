@@ -1,15 +1,14 @@
 # XDJ200SX
 An Open Source Standalone DJ Deck
 
-## This repository is a fork of [Marc Monkas’ XDJ100SX project](https://drive.google.com/](https://github.com/marcmonka/XDJ100SX)).
-It focuses on adapting and extending the original base to support CDJ200 hardware.
+## This repository is a fork of [Marc Monkas’ XDJ100SX project](https://github.com/marcmonka/XDJ100SX).
+- It focuses on adapting and extending the original base to support CDJ200 hardware.
 New features and modifications will be added progressively.
 
-This project is another experimental project that combines hardware, 
+- This project is another experimental project that combines hardware, 
 MIDI and open source software to convert an old Pioneer CDJ200 to a standalone player using all modern features.
 
 ![XDJ200SX](images/)
-
 
 ## Main Requirements:
 
