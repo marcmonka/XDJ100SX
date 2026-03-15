@@ -1,0 +1,114 @@
+<Template>
+    <WidgetGroup>
+        <ObjectName>HotCuePanel</ObjectName>
+            <Size>0me,0me</Size>
+             <Layout>vertical</Layout>
+        <Children>
+        <WidgetGroup>
+        <ObjectName>Waveforms_Container</ObjectName>
+        <Layout>horizontal</Layout>
+        <Children>
+          <Template src="skin:waveforms.xml"></Template>
+        </Children>
+      </WidgetGroup>
+    
+    <WidgetGroup><ObjectName>Stems</ObjectName><Layout>horizontal</Layout><Size>100me,95f</Size><Children>
+                
+                <WidgetGroup><Size>15f,95f</Size></WidgetGroup>
+
+                <PushButton>
+                <NumberStates>2</NumberStates>
+                <ObjectName>HotCue</ObjectName>
+                <Size>95f,75f</Size>
+                <State
+                ><Number>0</Number>
+                <Text>DRUMS</Text>
+                </State>
+                <State>
+                <Number>1</Number>
+                <Text>DRUMS</Text>
+                </State>
+                <Connection>
+                <ConfigKey>[Channel1_Stem1],mute</ConfigKey>
+                </Connection>
+                </PushButton>
+
+                <WidgetGroup><Size>15f,95f</Size></WidgetGroup>
+
+                 <PushButton>
+                <NumberStates>2</NumberStates>
+                <ObjectName>HotCue</ObjectName>
+                <Size>95f,75f</Size>
+                <State
+                ><Number>0</Number>
+                <Text>BASS</Text>
+                </State>
+                <State
+                ><Number>1</Number>
+                <Text>BASS</Text>
+                </State>
+                <Connection>
+                <ConfigKey>[Channel1_Stem2],mute</ConfigKey>
+                </Connection>
+                </PushButton>
+
+                <WidgetGroup><Size>15f,95f</Size></WidgetGroup>
+
+                 <PushButton>
+                <NumberStates>2</NumberStates>
+                <ObjectName>HotCue</ObjectName>
+                <Size>95f,75f</Size>
+                <State
+                ><Number>0</Number>
+                <Text>OTHER</Text>
+                </State>
+                <State
+                ><Number>1</Number>
+                <Text>OTHER</Text>
+                </State>
+                <Connection>
+                <ConfigKey>[Channel1_Stem3],mute</ConfigKey>
+                </Connection>
+                </PushButton>
+                
+                <WidgetGroup><Size>15f,95f</Size></WidgetGroup>
+
+                 <PushButton>
+                <NumberStates>2</NumberStates>
+                <ObjectName>HotCue</ObjectName>
+                <Size>95f,75f</Size>
+                <State
+                ><Number>0</Number>
+                <Text>VOCALS</Text>
+                </State>
+                <State
+                ><Number>1</Number>
+                <Text>VOCALS</Text>
+                </State>
+                <Connection>
+                <ConfigKey>[Channel1_Stem4],mute</ConfigKey>
+                </Connection>
+                </PushButton>
+
+                <WidgetGroup><Size>15f,95f</Size></WidgetGroup>                
+      
+                
+            </Children></WidgetGroup> 
+           
+            
+
+<WidgetGroup>
+        <ObjectName>Decks</ObjectName>
+        <Layout>horizontal</Layout>
+        <Size>0me,85max</Size>
+        <Children>
+          <Template src="skin:deck.xml">
+            <SetVariable name="channel">1</SetVariable>
+          </Template>
+          
+        </Children>
+      </WidgetGroup>
+
+        </Children>
+    </WidgetGroup>
+</Template>

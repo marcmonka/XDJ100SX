@@ -1,0 +1,100 @@
+<Template>
+  <WidgetGroup>
+    <SizePolicy>me,me</SizePolicy>
+    <Layout>vertical</Layout>
+    <Children>
+      <WidgetGroup>
+        <ObjectName>LibraryWrapper</ObjectName>
+        <Layout>vertical</Layout>
+        <Size>0me,0me</Size>
+        <Children>
+          <WidgetGroup>
+            <ObjectName>SidebarContainer</ObjectName>
+            <Layout>horizontal</Layout>
+            <Size>0me,40f</Size>
+            <Children>
+            <PushButton>
+                <ObjectName>SidebarButton</ObjectName>
+                <Size>75f,40f</Size>
+                <NumberStates>2</NumberStates>
+                <State>
+                  <Number>0</Number>
+                  <Text>BROWSE</Text>
+                </State>
+                <State>
+                  <Number>1</Number>
+                  <Text>BROWSE</Text>
+                </State>
+                <Connection>
+                  <ConfigKey>[Sidebar],sidebar_visible</ConfigKey>
+                </Connection>
+              </PushButton>
+
+               <WidgetGroup><Size>20f,30f</Size></WidgetGroup>
+
+              <SearchBox>
+                <ObjectName>SearchBox</ObjectName>
+                <Size>0me,40f</Size>
+              </SearchBox>
+              
+            </Children>
+          </WidgetGroup>
+          <WidgetGroup>
+            <SizePolicy>me,me</SizePolicy>
+            <Layout>horizontal</Layout>
+            <Size>0me,0me</Size>
+            <Children>
+            <!--SIDEBAR LATERAL (PLAYLISTS)-->
+            <WidgetGroup>
+                <ObjectName>SidebarWrapper</ObjectName>
+                <Layout>horizontal</Layout>
+                <Children>
+                  <LibrarySidebar>
+                    <ObjectName>LibrarySidebar</ObjectName>
+                    <Size>200f,0me</Size>
+                  </LibrarySidebar>
+                </Children>
+                <Connection>
+                  <ConfigKey>[Sidebar],sidebar_visible</ConfigKey>
+                  <BindProperty>visible</BindProperty>
+                </Connection>
+              </WidgetGroup>
+              
+              <!--LLIBRERIA-->
+              <WidgetGroup>
+                <ObjectName>LibraryWrapper</ObjectName>
+                <Layout>horizontal</Layout>
+                <Children>
+                  <Library>
+                    <ObjectName>Library</ObjectName>
+                    <Size>0me,0me</Size>
+                    <BgColor>#000</BgColor>
+                    <FgColor>#75001a</FgColor>
+                    <TrackTableBackgroundColorOpacity>0.4</TrackTableBackgroundColorOpacity>
+                  </Library>
+                </Children>
+                <Connection>
+                  <ConfigKey>[Sidebar],sidebar_visible</ConfigKey>
+                  <Transform><Not/></Transform>
+                </Connection>
+              </WidgetGroup>
+              
+            </Children>
+          </WidgetGroup>
+        </Children>
+      </WidgetGroup>
+      <WidgetGroup>
+        <ObjectName>Decks</ObjectName>
+        <Layout>horizontal</Layout>
+        <Size>0me,65max</Size>
+        <Children>
+          <Template src="skin:deckminimal.xml">
+            <SetVariable name="channel">1</SetVariable>
+          </Template>
+          
+        </Children>
+      </WidgetGroup>
+    </Children>
+  </WidgetGroup>
+  
+</Template>

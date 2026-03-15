@@ -1,0 +1,115 @@
+<Template>
+  <WidgetGroup>
+    <ObjectName>Waveform_Channel<Variable name="channel"/></ObjectName>
+    <Layout>vertical</Layout>
+    <Size>0me,50me</Size>
+    <Children>
+     
+      <Visual>
+        <TooltipId>waveform_display</TooltipId>
+        <ObjectName>Waveform<Variable name="channel"/></ObjectName>
+        <Channel><Variable name="channel"/></Channel>
+        <BgColor>#000</BgColor>
+        <BeatColor>#3a3a3a3a</BeatColor>
+        <PlayPosColor>#ffffffff</PlayPosColor>
+        <SignalColor>#32323c</SignalColor>
+        <SignalLowColor>#0551cc</SignalLowColor>
+        <SignalMidColor>#a45f26</SignalMidColor>
+        <SignalHighColor>#eee3c6</SignalHighColor>
+	<DefaultMark>
+          <Align>bottom|right</Align>
+          <Color>#FF0000</Color>
+          <TextColor>#FFFFFF</TextColor>
+         <Text> %1 </Text>
+        </DefaultMark>
+        <Mark>
+          <Control>cue_point</Control>
+          <Text>▲</Text>
+          <Color>#f87021</Color>
+          <TextColor>#f87021</TextColor>
+          <Align>bottom</Align>
+        </Mark>
+        <Mark>
+          <Control>hotcue_1_position</Control>
+          <Text>A</Text>
+          <Color>#f44040</Color>
+          <TextColor>#f44040</TextColor>
+          <Align>top</Align>
+        </Mark>
+        <Mark>
+          <Control>hotcue_2_position</Control>
+          <Text>B</Text>
+          <Color>#0ddcf2</Color>
+          <TextColor>#0ddcf2</TextColor>
+          <Align>top</Align>
+        </Mark>
+        <Mark>
+          <Control>hotcue_3_position</Control>
+          <Text>C</Text>
+          <Color>#a5df13</Color>
+          <TextColor>#a5df13</TextColor>
+          <Align>top</Align>
+        </Mark>
+        <Mark>
+          <Control>hotcue_4_position</Control>
+          <Text>D</Text>
+          <Color>#9d4cfd</Color>
+          <TextColor>#9d4cfd</TextColor>
+          <Align>top</Align>
+        </Mark>
+        <Mark>
+          <Control>hotcue_5_position</Control>
+          <Text>E</Text>
+          <Color>#3fec2b</Color>
+          <TextColor>#3fec2b</TextColor>
+          <Align>top</Align>
+        </Mark>
+        <Mark>
+          <Control>hotcue_6_position</Control>
+          <Text>F</Text>
+          <Color>#e6681c</Color>
+          <TextColor>#e6681c</TextColor>
+          <Align>top</Align>
+        </Mark>
+        <Mark>
+          <Control>hotcue_7_position</Control>
+          <Text>G</Text>
+          <Color>#2749c8</Color>
+          <TextColor>#2749c8</TextColor>
+          <Align>top</Align>
+        </Mark>
+        <Mark>
+          <Control>hotcue_8_position</Control>
+          <Text>H</Text>
+          <Color>#c7b205</Color>
+          <TextColor>#c7b205</TextColor>
+          <Align>top</Align>
+        </Mark>
+
+        <Mark>
+          <Control>loop_start_position</Control>
+          <Text>LOOP IN</Text>
+          <Color>#f09c40</Color>
+          <TextColor>#f09c40</TextColor>
+          <Align>bottom</Align>
+        </Mark>
+        <Mark>
+          <Control>loop_end_position</Control>
+          <Text>LOOP OUT</Text>
+          <Color>#f09c40</Color>
+          <TextColor>#f09c40</TextColor>
+          <Align>bottom</Align>
+        </Mark>
+        <MarkRange>
+          <StartControl>loop_start_position</StartControl>
+          <EndControl>loop_end_position</EndControl>
+          <EnabledControl>loop_enabled</EnabledControl>
+          <Color>#f09c40</Color>
+          <Opacity>0.8</Opacity>
+          <DisabledColor>#acacac</DisabledColor>
+          <DisabledOpacity>0.2</DisabledOpacity>
+        </MarkRange>
+      </Visual>
+    </Children>
+  </WidgetGroup>
+</Template>
