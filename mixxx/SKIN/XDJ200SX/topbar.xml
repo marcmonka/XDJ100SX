@@ -1,0 +1,206 @@
+<Template>
+  <WidgetGroup>
+    <ObjectName>Topbar</ObjectName>
+    <Layout>vertical</Layout>
+    <Size>100me,60f</Size>
+    <Children>
+      <WidgetGroup>
+          <ObjectName>FonsBarra</ObjectName>
+          <Layout>horizontal</Layout>
+              <Size>100me,60f</Size>
+          <Children>
+              <WidgetGroup> <!--ICONA BROWSE-->
+              <ObjectName>TabControls</ObjectName>
+              <Layout>vertical</Layout>
+              <Size>55f,60f</Size>
+              <Children>
+                  <Template src="skin:tab.xml">
+                  <SetVariable name="tab_name">⬅</SetVariable>
+                  <SetVariable name="config_key">library</SetVariable>
+                  </Template>
+              </Children>
+              </WidgetGroup>
+              
+            <!--Bloc segona columna-->
+            <WidgetGroup>
+              <ObjectName>TrackMetadata</ObjectName>
+              <Layout>horizontal</Layout>
+              <Size>3s,60f</Size>
+              <Children>
+
+            <!--SEGONA COLUMNA AMB ARTWORK-->
+                              <CoverArt>
+                                                  <Pos>0,0</Pos>
+                                                  <TooltipId>coverart</TooltipId>
+                                                  <ObjectName>DeckCoverArt</ObjectName>
+                                                  <Size>60f,50f</Size>
+                                                  <Channel>1</Channel>
+                                                </CoverArt>
+                                <!--TERCERA COLUMNA QUE CONTÉ 2 FILES-->
+
+                                <WidgetGroup>
+                                <ObjectName>TrackInfo</ObjectName>
+                                <Layout>vertical</Layout>
+                                <Size>me,60f</Size>
+                                <Children>
+                                <!--Títol de la Cançó-->
+                                  <TrackProperty>
+                                      <ObjectName>TitleText</ObjectName>
+                                    <Size>me,30f</Size>
+                                      <TooltipId>track_title</TooltipId>
+                                      <Property>titleInfo</Property>
+                                      <Alignment>Left</Alignment>
+                                      <Elide>right</Elide>
+                                      <Channel>1</Channel>
+                                      <Connection>
+                                        <ConfigKey><Variable name="Group"/>,track_loaded</ConfigKey>
+                                        <BindProperty>highlight</BindProperty>
+                                      </Connection>
+                                    </TrackProperty>
+
+                                    <WidgetGroup>
+                                    <ObjectName>TrackSubInfo</ObjectName>
+                                    <Layout>horizontal</Layout>
+                                    <Size>me,30f</Size>
+                                    <LayoutAlignment>left</LayoutAlignment>
+                                    <Children>
+
+
+                                        <!--Artista-->
+
+                                        <TrackProperty>
+                                            <ObjectName>ArtistText</ObjectName>
+                                            <Size>me,30f</Size>
+                                            <TooltipId>track_artist</TooltipId>
+                                            <Property>artist</Property>
+                                            <Elide>right</Elide>
+                                            <Channel>1</Channel>
+                                            <Connection>
+                                              <ConfigKey><Variable name="Group"/>,track_loaded</ConfigKey>
+                                              <BindProperty>highlight</BindProperty>
+                                            </Connection>
+                                          </TrackProperty>
+
+                                          <!--Duració-->
+                                          <TrackProperty>
+                                              <ObjectName>DurationText</ObjectName>
+                                              <Size>me,30f</Size>
+                                              <TooltipId>track_duration</TooltipId>
+                                              <Alignment>Left</Alignment>
+                                              <Property>durationTextSeconds</Property>
+                                              <Channel>1</Channel>
+                                          </TrackProperty>
+
+                                      </Children>
+                                      </WidgetGroup>
+                            
+                                </Children>
+                                </WidgetGroup>
+
+
+                                
+                
+                </Children>
+                </WidgetGroup>
+
+
+            <!--Botons part dreta-->
+            <WidgetGroup>
+              <ObjectName>RightButtons</ObjectName>
+                  <Layout>horizontal</Layout>
+
+                  <Size>1s,60f</Size>
+                  <Children>
+                    <WidgetGroup> 
+                  <ObjectName>TabControls</ObjectName>
+                <Layout>vertical</Layout>
+                  <Size>85f,60f</Size>
+               <Children>
+                  
+                  <Template src="skin:tab.xml">
+                  <SetVariable name="tab_name">HOT&#xA;CUE</SetVariable>
+                  <SetVariable name="config_key">hotcues</SetVariable>
+                  </Template>
+              </Children>
+              </WidgetGroup>
+              
+              <WidgetGroup><Size>15f,60f</Size></WidgetGroup>
+
+                <WidgetGroup> 
+                  <ObjectName>TabControls</ObjectName>
+                <Layout>vertical</Layout>
+                  <Size>85f,60f</Size>
+               <Children>
+                  
+                  <Template src="skin:tab.xml">
+                  <SetVariable name="tab_name">BEAT&#xA;LOOP</SetVariable>
+                  <SetVariable name="config_key">beatloop</SetVariable>
+                  </Template>
+              </Children>
+              </WidgetGroup>
+              <WidgetGroup><Size>15f,60f</Size></WidgetGroup>
+
+
+              <WidgetGroup> 
+                  <ObjectName>TabControls</ObjectName>
+                <Layout>vertical</Layout>
+                  <Size>85f,60f</Size>
+               <Children>
+                  
+                  <Template src="skin:tab.xml">
+                  <SetVariable name="tab_name">KEY&#xA;SHIFT</SetVariable>
+                  <SetVariable name="config_key">keyshift</SetVariable>
+                  </Template>
+              </Children>
+              </WidgetGroup>
+              <WidgetGroup><Size>15f,60f</Size></WidgetGroup>
+
+              <WidgetGroup> 
+                  <ObjectName>TabControls</ObjectName>
+                <Layout>vertical</Layout>
+                  <Size>85f,60f</Size>
+               <Children>
+                  
+                  <Template src="skin:tab.xml">
+                  <SetVariable name="tab_name">BEAT&#xA;JUMP</SetVariable>
+                  <SetVariable name="config_key">beatjump</SetVariable>
+                  </Template>
+              </Children>
+              </WidgetGroup>
+
+               <WidgetGroup><Size>15f,60f</Size></WidgetGroup>
+
+
+              <WidgetGroup> 
+                  <ObjectName>TabControls</ObjectName>
+                <Layout>vertical</Layout>
+                  <Size>85f,60f</Size>
+               <Children>
+                  
+                  <Template src="skin:tab.xml">
+                  <SetVariable name="tab_name">STEMS</SetVariable>
+                  <SetVariable name="config_key">stems</SetVariable>
+                  </Template>
+              </Children>
+              </WidgetGroup>
+
+              
+                    
+                
+                  </Children>
+                </WidgetGroup>
+
+           </Children>
+        </WidgetGroup>
+
+    
+      
+          
+
+
+
+    </Children>
+ </WidgetGroup>
+
+   
+</Template>

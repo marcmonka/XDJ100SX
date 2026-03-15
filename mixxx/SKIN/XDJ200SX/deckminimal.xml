@@ -1,0 +1,325 @@
+<Template>
+  <WidgetGroup>
+    <ObjectName>DeckMinimal</ObjectName>
+    <Layout>vertical</Layout>
+    <Size>100me,60f</Size>
+    <Children>
+     
+                  <WidgetGroup>
+                    <ObjectName>DeckInfo</ObjectName>
+                    <!--Fila de 5 columnes (quantize + temps + overview + mastertempo/pitch + bpm)-->
+                    <Layout>horizontal</Layout>
+                    <Children>
+                          <!--Primera columna (QUANTIZE)-->
+                          <WidgetGroup> 
+                                  <Layout>vertical</Layout>
+                                  <Size>40f,40f</Size>
+                                  <Children>
+
+                                    <PushButton>
+                                      <NumberStates>2</NumberStates>
+                                      <Size>40f,40f</Size>
+                                      <State>
+                                        <Number>0</Number> <!--inactiu-->
+                                        <Text>Q</Text>
+                                      </State>
+                                      <State>
+                                        <Number>1</Number> <!--actiu-->
+                                        <Text>Q</Text>
+                                      </State>
+                                      <Connection>
+                                        <ConfigKey>[Channel1],quantize</ConfigKey>
+                                      </Connection>
+                                    </PushButton>
+                                  </Children> 
+                            </WidgetGroup>
+                  
+                          <!--Segona columna (TEMPS)-->
+                          <WidgetGroup>
+                              <ObjectName>TrackTimeContainer</ObjectName>
+                              <Layout>vertical</Layout>
+                              <Size>80f,40f</Size>
+
+                              
+                              <Children>
+                                
+                                <WidgetGroup>
+                                  <ObjectName>DeckTrackTimeWrapper</ObjectName>
+                                  <Layout>horizontal</Layout>
+                                  <Size>100f,40f</Size>
+                                  <Children>
+                                  <NumberPos>
+                                          <ObjectName>DeckTrackTimeMinimal</ObjectName>
+                                          <MinimumSize>70f,40f</MinimumSize>
+                                          <TooltipId>track_time</TooltipId>
+                                          <Channel>1</Channel>
+                                          <NumberOfDigits>2</NumberOfDigits>
+                                          <Connection>
+                                            <ConfigKey>[Controls],playposition</ConfigKey>
+                                          </Connection>
+                                        </NumberPos>
+                                  </Children>
+                                </WidgetGroup>
+                              </Children>
+                            </WidgetGroup>
+
+                            <!--Tercera Columna: OVERVIEW-->
+
+                             <WidgetGroup>
+                            <ObjectName>DeckOverviewContainerMinimal</ObjectName>
+                            <Layout>vertical</Layout>
+                            <Size>0me,40f</Size>
+                            <Children>
+                            
+                              <Overview>
+                                <ObjectName>DeckOverview</ObjectName>                                
+                                <Size>0me,80f</Size>
+                                <Channel><Variable name="channel"/></Channel>
+                                <BgColor>#000</BgColor>
+                                <SignalColor>#222</SignalColor>
+                                <SignalLowColor>#0055E1</SignalLowColor>
+                                <SignalMidColor>#FFA600</SignalMidColor>
+                                <SignalHighColor>#FFFF88</SignalHighColor>
+                                <PlayedOverlayColor>#40ffffff</PlayedOverlayColor>
+                                <Mark>
+                                  <Control>cue_point</Control>
+                                  <Color>#eb870f</Color>
+                                </Mark>
+                          
+                          <Mark>
+                              <Control>hotcue_1_position</Control>
+                              <Text>A</Text>
+                              <Color>#f44040</Color>
+                              <TextColor>#f44040</TextColor>
+                              <Align>top</Align>
+                            </Mark>
+                            <Mark>
+                              <Control>hotcue_2_position</Control>
+                              <Text>B</Text>
+                              <Color>#0ddcf2</Color>
+                              <TextColor>#0ddcf2</TextColor>
+                              <Align>top</Align>
+                            </Mark>
+                            <Mark>
+
+                              <Control>hotcue_3_position</Control>
+                              <Text>C</Text>
+                              <Color>#a5df13</Color>
+                              <TextColor>#a5df13</TextColor>
+                              <Align>top</Align>
+                            </Mark>
+                            <Mark>
+                              <Control>hotcue_4_position</Control>
+                              <Text>D</Text>
+                              <Color>#9d4cfd</Color>
+                              <TextColor>#9d4cfd</TextColor>
+                              <Align>top</Align>
+                            </Mark>
+                            <Mark>
+                              <Control>hotcue_5_position</Control>
+                              <Text>E</Text>
+                              <Color>#3fec2b</Color>
+                              <TextColor>#3fec2b</TextColor>
+                              <Align>top</Align>
+                            </Mark>
+                            <Mark>
+                              <Control>hotcue_6_position</Control>
+                              <Text>F</Text>
+                              <Color>#e6681c</Color>
+                              <TextColor>#e6681c</TextColor>
+                              <Align>top</Align>
+                            </Mark>
+                            <Mark>
+                              <Control>hotcue_7_position</Control>
+                              <Text>G</Text>
+                              <Color>#2749c8</Color>
+                              <TextColor>#2749c8</TextColor>
+                              <Align>top</Align>
+                            </Mark>
+                            <Mark>
+                              <Control>hotcue_8_position</Control>
+                              <Text>H</Text>
+                              <Color>#c7b205</Color>
+                              <TextColor>#c7b205</TextColor>
+                              <Align>top</Align>
+                            </Mark>
+                                <Mark>
+                                  <Control>loop_start_position</Control>
+                                  <Color>#f09c40</Color>
+                                </Mark>
+                                <Mark>
+                                  <Control>loop_end_position</Control>
+                                  <Color>#f09c40</Color>
+                                </Mark>
+                                
+                                <MarkRange>
+                                  <StartControl>loop_start_position</StartControl>
+                                  <EndControl>loop_end_position</EndControl>
+                                  <EnabledControl>loop_enabled</EnabledControl>
+                                  <Color>#f09c40</Color>
+                                  <Opacity>0.5</Opacity>
+                                  <DisabledColor>#acacac</DisabledColor>
+                                  <DisabledOpacity>0.2</DisabledOpacity>
+                                </MarkRange>
+                                
+                                <Connection>
+                                  <ConfigKey>[Channel<Variable name="channel"/>],playposition</ConfigKey>
+                                </Connection>
+                              </Overview>
+                            </Children>
+                          </WidgetGroup>
+                          <!--Fi Overview-->
+
+                            <!--Quarta columna conté 2 files: primera fila: MASTERTEMPO + RANG DE PITCH I SEGONA FILA, KEY INFO + PERCENTATGE DE PITCH ACTUAL-->
+                            <WidgetGroup>
+                              <ObjectName>TrackBPMRangeContainerMinimal</ObjectName>
+                              <Layout>vertical</Layout>
+                              <Size>100f,40f</Size>
+                              <Children>  
+
+                              <!-- PRIMERA FILA-->
+                              <WidgetGroup>
+                                  <ObjectName>DeckInfo</ObjectName>
+                                  <Layout>horizontal</Layout>
+                                  <Children>
+                                  <Label>
+                                  <ObjectName>MasterTempoMinimal</ObjectName>
+                                  <Size>50f,20f</Size>
+                                  <Text>MT</Text>
+                                  <Connection>
+                                    <ConfigKey>[Channel1],keylock</ConfigKey>
+                                    <BindProperty>highlight</BindProperty>
+                                  </Connection>
+                                  </Label>
+                                  
+
+                                    <WidgetGroup>
+                                      <ObjectName>DeckBPMRangePercentMinimal</ObjectName>
+                                      <Layout>horizontal</Layout>
+                                     <Size>50f,20f</Size>
+
+                                      <Children>              
+                                          <!--RANG DEL PITCH-->            
+                                          <Label>
+                                            <ObjectName>BPMRangePlusMinusMinimal</ObjectName>
+                                            <Text>&#177;</Text>
+                                          </Label>
+                                          <RateRange>
+                                            <TooltipId>rate_range_display</TooltipId>
+                                            <ObjectName>RateDisplayMinimal</ObjectName>
+                                            <Channel><Variable name="channel" /></Channel>
+                                            <Display>range</Display>
+                                          </RateRange>
+                                      </Children>
+                                    </WidgetGroup>
+                                  </Children>
+                                  <!--FI RANG DE PITCH-->
+
+                                  <!--FI DE LA FILA-->
+                                  </WidgetGroup>
+
+                                <!--INICI SEGONA FILA-->
+
+                                <!-- KEY INFO-->
+
+                                <WidgetGroup>
+                                <ObjectName>KeyPitchInfo</ObjectName>
+                                <Layout>horizontal</Layout>
+                                <Size>1s,20f</Size>
+                                <Children>
+
+
+                                        <WidgetGroup>
+                                            <Size>20f,20f</Size>
+
+                                            <Layout>horizontal</Layout>
+                                            
+                                            <Children>
+
+                                            
+                                                <Key>
+                                                <ObjectName>KeyInfoMinimal</ObjectName>
+                                                <TooltipId>visual_key</TooltipId>
+                                                <DisplayCents>false</DisplayCents> <!-- false (default) or true) -->
+                                                <Connection>
+                                                <ConfigKey>[Channel1],visual_key</ConfigKey>
+                                                </Connection>
+                                                </Key>
+                                        </Children>
+                                        </WidgetGroup>
+
+
+
+                                        <!-- PERCENTATGE DE PITCH ACTUAL-->
+                                        <WidgetGroup>
+                                        <ObjectName>PitchCurrentMinimalWrapper<Variable name="channel"/></ObjectName>
+                                        <Layout>horizontal</Layout>
+                                        <Size>100f,20f</Size>
+                                        <Children>
+                                            <NumberRate>
+                                            <TooltipId>rate_display</TooltipId>
+                                            <ObjectName>PitchCurrentMinimal</ObjectName>
+                                            <Channel><Variable name="channel"/></Channel>
+                                            <NumberOfDigits>2</NumberOfDigits>
+                                            </NumberRate>
+                                            
+                                        </Children>
+                                        </WidgetGroup>
+                                    </Children>
+                                    </WidgetGroup>
+
+                              </Children>
+                              </WidgetGroup>      
+
+                            <!--Quarta columna (BPM)-->
+
+
+                            <WidgetGroup>
+                              <ObjectName>TrackBPMContainer</ObjectName>
+                              <Layout>vertical</Layout>
+                              <Size>75max,40f</Size>
+                              <Children>
+                                
+                                <WidgetGroup>
+                                  <ObjectName>DeckBPMWrapperminimal</ObjectName>
+                                  <Layout>vertical</Layout>
+                                  <Size>0me,40f</Size>
+                                  <Children>
+                                  <WidgetGroup>
+                                      <ObjectName>DeckBPMTitleWrapper</ObjectName>
+                                      <Layout>horizontal</Layout>
+                                      <Children>
+                                        <Label>
+                                          <ObjectName>DeckBPMTitle</ObjectName>
+                                          <Text>BPM</Text>
+                                        </Label>
+                                      </Children>
+                                    </WidgetGroup>
+                                    <NumberBpm>
+                                      <ObjectName>DeckBPMminimal</ObjectName>
+                                      <TooltipId>visual_bpm</TooltipId>
+                                      <Channel><Variable name="channel"/></Channel>
+                                      <NumberOfDigits>1</NumberOfDigits>
+                                      <Connection>
+                                        <ConfigKey>[Channel<Variable name="channel"/>],visual_bpm</ConfigKey>
+                                      </Connection>
+                                    </NumberBpm>
+                                  </Children>
+                                </WidgetGroup>
+                              </Children>
+                            </WidgetGroup>
+                            <!--FI QUARTA COLUMNA-->
+
+                    </Children>
+                    <!--FI FILA 1-->
+                  </WidgetGroup>
+
+
+
+        
+
+
+    </Children>
+  </WidgetGroup>
+</Template>
+

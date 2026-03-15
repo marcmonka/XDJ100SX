@@ -1,0 +1,12 @@
+<Template>
+  <WidgetGroup>
+    <ObjectName>Waveforms</ObjectName>
+    <Layout>vertical</Layout>
+    <Size>0me,0me</Size>
+    <Children>
+      <Template src="skin:waveform.xml">
+        <SetVariable name="channel">1</SetVariable>
+      </Template>
+    </Children>
+  </WidgetGroup>
+</Template>
