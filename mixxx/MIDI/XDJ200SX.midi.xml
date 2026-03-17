@@ -74,8 +74,8 @@
             </control>
             <control>
                 <group>[Channel1]</group>
-                <key>loop_halve</key>
-                <description>LOOP HALF</description>
+                <key>beatjump_X_forward</key>
+                <description>BEAT JUMP BCK 16 BEATS</description>
                 <status>0x90</status>
                 <midino>0x40</midino>
                 <options>
@@ -84,8 +84,8 @@
             </control>
             <control>
                 <group>[Channel1]</group>
-                <key>loop_double</key>
-                <description>LOOP DOUBLE</description>
+                <key>beatjump_16_forward</key>
+                <description>BEAT JUMP FWD 16 BEATS</description>
                 <status>0x90</status>
                 <midino>0x41</midino>
                 <options>
@@ -243,6 +243,79 @@
                 <script-binding/>
                 </options>
             </control>
+
+            <!-- NEW BUTTONS FOR THE XDJ200SX-->
+
+            <!--Folder search left: LOOP HALF-->
+            <control>
+                <group>[Channel1]</group>
+                <key>loop_halve</key>
+                <description>LOOP HALF</description>
+                <status>0x90</status>
+                <midino>0x4A</midino>
+                <options>
+                    <normal/>
+                </options>
+            </control>
+            <!--Folder search right: LOOP DOUBLE-->
+            <control>
+                <group>[Channel1]</group>
+                <key>loop_double</key>
+                <description>LOOP DOUBLE</description>
+                <status>0x90</status>
+                <midino>0x4B</midino>
+                <options>
+                    <normal/>
+                </options>
+            </control>
+            <!--LOOP IN-->
+            <control>
+                <group>[Channel1]</group>
+                <key>loop_in</key>
+                <description>LOOP IN</description>
+                <status>0x90</status>
+                <midino>0x4C</midino>
+                <options>
+                    <normal/>
+                </options>
+            </control>
+            <!--LOOP OUT-->
+            <control>
+                <group>[Channel1]</group>
+                <key>loop_out</key>
+                <description>LOOP OUT</description>
+                <status>0x90</status>
+                <midino>0x4D</midino>
+                <options>
+                    <normal/>
+                </options>
+            </control>
+             <!--RELOOP-->
+            <control>
+                <group>[Channel1]</group>
+                <key>reloop_exit</key>
+                <description>RELOOP</description>
+                <status>0x90</status>
+                <midino>0x4E</midino>
+                <options>
+                    <normal/>
+                </options>
+            </control>
+             <!--BEATLOOP: MAKE A 4 BEAT LOOP AUTOMATICALLY-->
+            <control>
+                <group>[Channel1]</group>
+                <key>beatloop_4_toggle</key>
+                <description>4 BEAT LOOP</description>
+                <status>0x90</status>
+                <midino>0x4F</midino>
+                <options>
+                    <normal/>
+                </options>
+            </control>
+
+            <!-- END OF NEW BUTTONS XDJ200SX-->
+
+
         
     
         </controls>

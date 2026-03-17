@@ -114,7 +114,6 @@ Bounce loopin_boto = Bounce (loopin_pin, 50);
 Bounce loopout_boto = Bounce (loopout_pin, 50);
 Bounce reloop_boto = Bounce (reloop_pin, 50);
 
-//Bounce time_boto = Bounce (time_pin, 50);
 
 
 // --- Execute Function if receiving a MIDI Message ---
@@ -277,9 +276,19 @@ jet_boto.update();
 zip_boto.update();
 wah_boto.update();
 hold_boto.update();
-//time_boto.update();
 mastertempo_boto.update();
 load_boto.update();
+
+// --- update new buttons for the xdj200sx ---
+
+foldersearch_back_boto.update();
+foldersearch_forward_boto.update();
+loopin_boto.update();
+loopout_boto.update();
+reloop_boto.update();
+beatloop_boto.update();
+autocue_boto.update();
+
 
 
 //Play
@@ -369,13 +378,13 @@ if(hold_boto.fallingEdge()){
  if(hold_boto.risingEdge()){
    usbMIDI.sendNoteOff(71, 0, channel); 
  }
-     //time
-//if(time_boto.fallingEdge()){
-//   usbMIDI.sendNoteOn(72, 127, channel); 
-// }
-// if(time_boto.risingEdge()){
-//   usbMIDI.sendNoteOff(72, 0, channel); 
-// }
+     //autocue
+if(autocue_boto.fallingEdge()){
+   usbMIDI.sendNoteOn(72, 127, channel); 
+ }
+ if(autocue_boto.risingEdge()){
+   usbMIDI.sendNoteOff(72, 0, channel); 
+ }
      //load
 if(load_boto.fallingEdge()){
    usbMIDI.sendNoteOn(73, 127, channel); 
@@ -383,6 +392,60 @@ if(load_boto.fallingEdge()){
  if(load_boto.risingEdge()){
    usbMIDI.sendNoteOff(73, 0, channel); 
  }
+
+
+
+ // ---- addiitonal buttons for the xdj200sx ----- 
+
+ // Folder Search left
+ if(foldersearch_back_boto.fallingEdge()){
+   usbMIDI.sendNoteOn(74, 127, channel);  //0x4A
+ }
+ if(foldersearch_back_boto.risingEdge()){
+   usbMIDI.sendNoteOff(74, 0, channel);  //0x4A
+ }
+ }
+  // Folder Search right
+ if(foldersearch_forward_boto.fallingEdge()){
+   usbMIDI.sendNoteOn(75, 127, channel);  //0x4B
+ }
+ if(foldersearch_forward_boto.risingEdge()){
+   usbMIDI.sendNoteOff(75, 0, channel); //0x4B
+ }
+  // Loop IN
+ if(loopin_boto.fallingEdge()){
+   usbMIDI.sendNoteOn(76, 127, channel); //0x4C
+ }
+ 
+ if(loopin_boto.risingEdge()){
+   usbMIDI.sendNoteOff(76, 0, channel); //0x4C
+ }
+  // Loop OUT
+ if(loopout_boto.fallingEdge()){
+   usbMIDI.sendNoteOn(77, 127, channel); //0x4D
+ }
+ if(loopout_boto.risingEdge()){
+   usbMIDI.sendNoteOff(77, 0, channel); //0x4D
+ }
+  // Reloop
+ if(reloop_boto.fallingEdge()){
+   usbMIDI.sendNoteOn(78, 127, channel); //0x4E
+ }
+ if(reloop_boto.risingEdge()){
+   usbMIDI.sendNoteOff(78, 0, channel); //0x4E
+ }
+  // Beatloop
+ if(beatloop_boto.fallingEdge()){
+   usbMIDI.sendNoteOn(79, 127, channel); //0x4F
+ }
+ if(beatloop_boto.risingEdge()){
+   usbMIDI.sendNoteOff(79, 0, channel); //0x4F
+ }
+
+ // ---- end of new additions to xdj200sx -----
+
+
+
 
 
  //Jog: cridem la funció JogNudge
