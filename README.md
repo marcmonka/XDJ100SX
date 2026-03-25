@@ -23,13 +23,14 @@ This project is another experimental project that combines hardware, MIDI and op
 - /docs/ -> Documentation of this project
 
 
-## Raspberri Pi 3B+ Image file
+## Raspberry Pi 3B+ Image file
 
 Note it only works with the Raspberry Pi 3B+
 
-[Image File](https://drive.google.com/file/d/1xF3MYwbI78TJTnMUjNkVMXjbA1-jqFb2/view?usp=sharing).
+[Image File](https://drive.google.com/file/d/1fU8ckY35uxCYHJtw1JgclCYaJdQCbCJT/view?usp=sharing).
 
 
+[![Discord](https://img.shields.io/badge/Discord-Join_the_community-5865F2?logo=discord&logoColor=white)](https://discord.gg/4D3xxvuDTy)
 
 ### 📜 License
 - All code in this repository is released under the [GNU GPL v3 License](https://www.gnu.org/licenses/gpl-3.0.html).
