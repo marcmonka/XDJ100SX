@@ -41,3 +41,5 @@ Note it only works with the Raspberry Pi 3B+
 2025 Marc Monka
 
 2026 Markus Golec
+
+2026 Jeancarlo Cardoso de Faria Filho (jaianlab) — Raspberry Pi Pico port, MCP developer tool
