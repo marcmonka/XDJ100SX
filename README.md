@@ -24,11 +24,15 @@ MIDI and open source software to convert an old Pioneer CDJ200 to a standalone p
 - /print-assets/ -> STL file to 3D print + adhesive custom skin to print
 - /docs/ -> Documentation of this project
 
-## Raspberry Pi 3B+ Image file: #in progress 01.2026
+
+## Raspberry Pi 3B+ Image file
 
 Note it only works with the Raspberry Pi 3B+
 
-[Image File](https://drive.google.com/).
+[Image File](https://drive.google.com/file/d/1fU8ckY35uxCYHJtw1JgclCYaJdQCbCJT/view?usp=sharing).
+
+
+[![Discord](https://img.shields.io/badge/Discord-Join_the_community-5865F2?logo=discord&logoColor=white)](https://discord.gg/4D3xxvuDTy)
 
 ### 📜 License
 - All code in this repository is released under the [GNU GPL v3 License](https://www.gnu.org/licenses/gpl-3.0.html).
@@ -37,3 +41,5 @@ Note it only works with the Raspberry Pi 3B+
 2025 Marc Monka
 
 2026 Markus Golec
+
+2026 Jeancarlo Cardoso de Faria Filho (jaianlab) — Raspberry Pi Pico port, MCP developer tool
