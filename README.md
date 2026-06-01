@@ -27,6 +27,8 @@ This project is another experimental project that combines hardware, MIDI and op
 
 Note it only works with the Raspberry Pi 3B+
 
+Please read: I identified the mapping included in the image may not work 100% - several users mentioned pitch is not working properly, so the XML and JS mapping files must be replaced with the ones attached in project content under /mixxx
+
 [Image File](https://drive.google.com/file/d/1fU8ckY35uxCYHJtw1JgclCYaJdQCbCJT/view?usp=sharing).
 
 
