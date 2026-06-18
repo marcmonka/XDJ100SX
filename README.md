@@ -21,6 +21,7 @@ This project is another experimental project that combines hardware, MIDI and op
 - /mixxx/ -> Custom skin and MIDI mapping for this project
 - /print-assets/ -> STL file to 3D print + adhesive custom skin to print
 - /docs/ -> Documentation of this project
+- /SCRIPTS/ -> Installation scripts for new shutdown process, usb eject, and usb share over network
 
 
 ## Raspberry Pi 3B+ Image file
@@ -30,6 +31,8 @@ Note it only works with the Raspberry Pi 3B+
 [Image File (update June 2026](https://drive.google.com/file/d/12VGHPIK-dUKwpeFkzCrLtSqvwtZfTJgV/view?usp=sharing).
 
 ## UPDATES JUNE 2026:
+
+The following updates are already included in the new Image file. You may want to install each update manually instead. Find the scripts in the /SCRIPTS/ folder.
 
 ### Linux packages & Kernel have been updated (June 2026)
 > If you apply the image on a later time, open the terminal and write apt get update && apt get upgrade -y to keep all packages up to date
@@ -81,4 +84,4 @@ Note it only works with the Raspberry Pi 3B+
 - All code in this repository is released under the [GNU GPL v3 License](https://www.gnu.org/licenses/gpl-3.0.html).
 - All documentation, 3D models, and visual materials are released under the [Creative Commons BY-SA 4.0 License](https://creativecommons.org/licenses/by-sa/4.0/).
 
-2025 Marc Monka
+2026 Marc Monka
