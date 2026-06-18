@@ -1,0 +1,35 @@
+#!/bin/bash
+# usbmount hook: /etc/usbmount/mount.d/00_xdj_share
+# Called by usbmount after mounting a USB drive.
+# Environment provided by usbmount: $UM_DEVICE, $UM_MOUNTPOINT, $UM_FILESYSTEM
+
+log() { logger -t xdj-usb-share "$1"; }
+log "USB mounted: $UM_DEVICE → $UM_MOUNTPOINT ($UM_FILESYSTEM)"
+
+# Detect subnet automatically
+IFACE=$(ip route | awk '/default/{print $5; exit}')
+NET=$(ip -o -f inet addr show "$IFACE" 2>/dev/null | awk '{print $4}')
+SUBNET=$(python3 -c "import ipaddress; print(ipaddress.ip_network('$NET', strict=False))" 2>/dev/null \
+         || echo "192.168.0.0/16")
+
+# NFS export (read-only)
+grep -q "^$UM_MOUNTPOINT" /etc/exports \
+    || echo "$UM_MOUNTPOINT $SUBNET(ro,sync,no_subtree_check,all_squash)" >> /etc/exports
+exportfs -ra
+systemctl is-active --quiet nfs-kernel-server || systemctl start nfs-kernel-server
+log "NFS exported $UM_MOUNTPOINT → $SUBNET"
+
+# Announce via avahi-publish-service as a systemd transient unit.
+# avahi-publish-service uses dbus and must stay running to keep the announcement alive.
+# We stop any previous instance first, then start a new one.
+systemctl stop xdj-avahi-publish.service 2>/dev/null || true
+systemd-run \
+    --no-block \
+    --unit=xdj-avahi-publish \
+    --description="XDJ USB avahi publisher" \
+    /usr/bin/avahi-publish-service \
+        "XDJ-USB on $(hostname)" \
+        _xdj-usb._tcp \
+        2049 \
+        "path=$UM_MOUNTPOINT"
+log "Avahi service announced (path=$UM_MOUNTPOINT)"

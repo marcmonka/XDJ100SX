@@ -1,0 +1,15 @@
+[Unit]
+Description=XDJ USB Network Client (auto-mount shared USB from other Pi)
+After=network-online.target avahi-daemon.service
+Wants=network-online.target avahi-daemon.service
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/xdj-usb-client-watch.sh
+Restart=always
+RestartSec=5
+# Give avahi time to come up on boot before first browse
+ExecStartPre=/bin/sleep 5
+
+[Install]
+WantedBy=multi-user.target

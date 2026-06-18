@@ -1,0 +1,17 @@
+#!/bin/bash
+# usbmount hook: /etc/usbmount/umount.d/00_xdj_unshare
+# Called by usbmount before unmounting a USB drive.
+# Environment provided by usbmount: $UM_DEVICE, $UM_MOUNTPOINT
+
+log() { logger -t xdj-usb-share "$1"; }
+
+# Stop avahi announcement (client Pi will see disappearance and unmount NFS)
+systemctl stop xdj-avahi-publish.service 2>/dev/null || true
+log "Avahi service stopped"
+
+# Remove NFS export
+if [ -n "$UM_MOUNTPOINT" ]; then
+    sed -i "\|^$UM_MOUNTPOINT|d" /etc/exports
+    exportfs -ra
+    log "NFS export removed for $UM_MOUNTPOINT"
+fi
