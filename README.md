@@ -37,7 +37,7 @@ The following updates are already included in the new Image file. You may want t
 ### Linux packages & Kernel have been updated (June 2026)
 > If you apply the image on a later time, open the terminal and write apt get update && apt get upgrade -y to keep all packages up to date
 
-###USB network share:
+### USB network share:
 > You can now load music from the other's xdj100sx USB. You only need both devices to be connected to the same network. It work with both WiFi and Ethernet. In Mixxx you will see, under Rekordbox, "USB1" which is the one connected to the second device. The Pi3B+ WiFi is not so fast so you may expect a bit of lag when scrolling network usb drive, but it loads properly.
 
 ### USB Eject: 
